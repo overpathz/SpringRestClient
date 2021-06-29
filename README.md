@@ -19,5 +19,12 @@ url: current repo
 #### App class:
 ![image](https://i.ibb.co/KVmSbGG/Screenshot-70.png)
 
-#### Result:
+#### Result (console):
 ![image](https://i.ibb.co/7nzP282/Screenshot-71.png)
+
+#### Result (database):
+##### Before:
+![image](https://i.ibb.co/LJr3NfG/Screenshot-72.png)
+
+##### After:
+![image](https://i.ibb.co/vJGtFqM/Screenshot-73.png)
