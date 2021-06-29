@@ -1,8 +1,6 @@
 package com.overpathz.spring.rest;
 
-import com.overpathz.spring.rest.entity.BankCurrency;
 import com.overpathz.spring.rest.entity.Employee;
-import com.overpathz.spring.rest.entity.PersonalData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -20,8 +18,11 @@ public class Communication {
 
     private final String URL = "http://localhost:8080/api/employees/";
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
+
+    public Communication(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public List<Employee> getAllEmployees() {
         ResponseEntity<List<Employee>> responseEntity = restTemplate.exchange(URL, HttpMethod.GET,
@@ -53,4 +54,5 @@ public class Communication {
         restTemplate.delete(URL + "/" + id);
         System.out.println("Employee with ID " + id + " was deleted from database.");
     }
+
 }
