@@ -6,7 +6,7 @@
 - ##### Spring (RestTemplate Bean)
 
 ### Employee REST Service:
-url: https://github.com/overpathz/SpringRestHibernate
+url: https://github.com/overpathz/SpringRestService
 ![image](https://i.ibb.co/48B4Ksm/Screenshot-68.png)
 
 ### Employee REST Client:
