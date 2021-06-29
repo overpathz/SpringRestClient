@@ -14,7 +14,27 @@ public class App {
         ApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
         Communication communication = context.getBean("communication", Communication.class);
 
-        Employee getEmployee = communication.getEmployee(4);
-        System.out.println(getEmployee);
+
+        System.out.println("All employees:");
+        List<Employee> employees = communication.getAllEmployees();
+        System.out.println(employees + "\n");
+
+        System.out.println("\nGetting one employee:");
+        Employee employee = communication.getEmployee(3);
+        System.out.println(employee + "\n");
+
+        System.out.println("\nAdding the employee:");
+        Employee addEmployee = new Employee("Dmytro", "Orkestr", "IT", 550);
+        communication.saveEmployee(addEmployee);
+
+        System.out.println("\nDelete the employee:");
+        communication.deleteEmployee(3);
+
+        // if the employee does not have the id, he will be saved to the database.
+        // Otherwise, his data will be updated
+        System.out.println("\nUpdate the employee:");
+        Employee updateEmployeeId5 = new Employee("Jessica", "London", "Marketing", 1245);
+        updateEmployeeId5.setId(5);
+        communication.saveEmployee(updateEmployeeId5);
     }
 }
